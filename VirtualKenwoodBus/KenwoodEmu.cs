@@ -1,6 +1,7 @@
 ﻿using HambusCommonLibrary;
 using System;
 using System.IO.Ports;
+using System.Text;
 using System.Threading;
 
 namespace VirtualKenwoodBus
@@ -219,12 +220,12 @@ namespace VirtualKenwoodBus
       if (cmd.Length != 3)
         return;
       int iTx = 0;
-      if (state.Tx)
-        iTx = 1;
+      //if (state.Tx)
+      //  iTx = 1;
       extStr = string.Format("{0}000000 ",
           Convert.ToInt32(ModeStdToKenwoodEnum()));  // p15 6
       sendStr = string.Format("IF{0}{1}{2}{3}{4}{5}{6}{7}{8};",
-          state.Freq.ToString("D11"), //p1
+          //state.Freq.ToString("D11"), //p1
           "TS480",//p2
           "+0000",// p3
           "0", // p4
@@ -241,13 +242,13 @@ namespace VirtualKenwoodBus
     {
       if (cmd == "TX;")
       {
-        state.Tx = true;
+        //state.Tx = true;
       }
       else
       {
-        state.Tx = false;
+        //state.Tx = false;
       }
-      udpServer.SendBroadcast(state, 7300);
+      //udpServer.SendBroadcast(state, 7300);
     }
 
     private void ModeCommand(string cmd)
@@ -266,8 +267,8 @@ namespace VirtualKenwoodBus
         var semiLoc = cmd.IndexOf(';');
         var modeEnumStr = cmd.Substring(2, semiLoc - 2);
         var modeInt = Convert.ToInt32(modeEnumStr);
-        state.Mode = ((Mode)modeInt).ToString();
-        udpServer.SendBroadcast(state, 7300);
+        //state.Mode = ((Mode)modeInt).ToString();
+        //udpServer.SendBroadcast(state, 7300);
       }
       catch (FormatException)
       { }
@@ -277,11 +278,11 @@ namespace VirtualKenwoodBus
     {
       if (cmd.Length == 3)
       {
-        if (cmd[1].ToString().ToLower() == "a")
-          SendSerial("FA" + state.FreqA.ToString("D11") + ";");
-        else
-          SendSerial("FB" + state.FreqB.ToString("D11") + ";");
-        return;
+        if (cmd[1].ToString().ToLower() == "a") { }
+        //SendSerial("FA" + state.FreqA.ToString("D11") + ";");
+        else { }
+          //SendSerial("FB" + state.FreqB.ToString("D11") + ";");
+          return;
       }
 
       var semiLoc = cmd.IndexOf(';');
@@ -289,8 +290,8 @@ namespace VirtualKenwoodBus
       try
       {
         var freqInt = Convert.ToInt64(freqStr);
-        state.Freq = freqInt;
-        udpServer.SendBroadcast(state, 7300);
+        //state.Freq = freqInt;
+        //udpServer.SendBroadcast(state, 7300);
       }
       catch (Exception) { }
     }
@@ -317,7 +318,7 @@ namespace VirtualKenwoodBus
             int c = serialPort.ReadChar();
             if (c < 0)
             {
-              Console.WriteLine("Serial port {0} read error", portConf.PortName);
+              //Console.WriteLine("Serial port {0} read error", portConf.PortName);
               return;
             }
             char ch = Convert.ToChar(c);
@@ -338,8 +339,8 @@ namespace VirtualKenwoodBus
           }
           catch (Exception e)
           {
-            Console.WriteLine("Serial Read Error: {0} port {1} Display Name: {2}",
-                e.ToString(), portConf.PortName, portConf.DisplayName);
+            //Console.WriteLine("Serial Read Error: {0} port {1} Display Name: {2}",
+            //    e.ToString(), portConf.PortName, portConf.DisplayName);
           }
         }
         catch (TimeoutException) { }
@@ -350,7 +351,9 @@ namespace VirtualKenwoodBus
 
     private Mode ModeStdToKenwoodEnum()
     {
-      switch (state.Mode.ToUpper())
+      var foo = "CW";
+      //switch (state.Mode.ToUpper())
+      switch(foo)
       {
         case "USB":
           return Mode.USB;
