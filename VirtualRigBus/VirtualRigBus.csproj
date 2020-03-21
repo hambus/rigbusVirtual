@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\commonLib\HambusCommonLibrary\HambusCommonLibrary.csproj" />
+    <ProjectReference Include="..\VirtualKenwoodBus\VirtualKenwoodBus.csproj" />
   </ItemGroup>
 
 </Project>
