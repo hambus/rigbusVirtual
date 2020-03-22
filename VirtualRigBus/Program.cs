@@ -11,19 +11,15 @@ namespace VirtualRigBus
     static void Main(string[] args)
     {
       CommPortConfig portConf = new CommPortConfig();
-      portConf.BaudRate = 9600;
+      portConf.BaudRate = 57600;
       portConf.BaudRate = 8;
       portConf.StopBits = "one";
       portConf.Parity = "none";
-      portConf.ReadTimeout = 200000;
-      portConf.WriteTimeout = 2000;
-      portConf.PortName = "com10";
+      portConf.PortName = "com11";
       portConf.DisplayName = "ACLogger";
       portConf.Handshake = "none";
       var kenwood = new KenwoodEmu();
       kenwood.OpenPort(portConf);
-      while (true)
-        Thread.Sleep(1000);
     }
   }
 }

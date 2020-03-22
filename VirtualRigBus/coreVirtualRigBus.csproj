@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commonLib\HambusCommonLibrary\HambusCommonLibrary.csproj" />
-    <ProjectReference Include="..\VirtualKenwoodBus\VirtualKenwoodBus.csproj" />
+    <ProjectReference Include="..\..\commonLib\HambusCommonLibrary\CoreHambusCommonLibrary.csproj" />
+    <ProjectReference Include="..\VirtualKenwoodBus\CoreVirtualKenwoodBus.csproj" />
   </ItemGroup>
 
 </Project>
