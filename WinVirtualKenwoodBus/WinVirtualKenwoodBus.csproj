@@ -44,11 +44,5 @@
     <Compile Include="KenwoodEmu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WinHambusCommonLibrary\WinHambusCommonLibrary.csproj">
-      <Project>{c2da750a-819b-43d9-ad85-a4ee36427b61}</Project>
-      <Name>WinHambusCommonLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

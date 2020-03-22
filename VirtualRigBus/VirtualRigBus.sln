@@ -9,12 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreHambusCommonLibrary", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreVirtualKenwoodBus", "..\VirtualKenwoodBus\CoreVirtualKenwoodBus.csproj", "{E858E525-0A76-421E-B762-1B531CBCC077}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinVirtualRigBus", "..\VirtualRigBusWin\WinVirtualRigBus.csproj", "{1B487C92-0DB4-41CD-AF91-9A38029FCD13}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinVirtualKenwoodBus", "..\WinVirtualKenwoodBus\WinVirtualKenwoodBus.csproj", "{8B5D99B6-E290-48DA-9BA3-6A437436A20A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinHambusCommonLibrary", "..\WinHambusCommonLibrary\WinHambusCommonLibrary.csproj", "{C2DA750A-819B-43D9-AD85-A4EE36427B61}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,18 +27,6 @@ Global
 		{E858E525-0A76-421E-B762-1B531CBCC077}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E858E525-0A76-421E-B762-1B531CBCC077}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E858E525-0A76-421E-B762-1B531CBCC077}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B487C92-0DB4-41CD-AF91-9A38029FCD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B487C92-0DB4-41CD-AF91-9A38029FCD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B487C92-0DB4-41CD-AF91-9A38029FCD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B487C92-0DB4-41CD-AF91-9A38029FCD13}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B5D99B6-E290-48DA-9BA3-6A437436A20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B5D99B6-E290-48DA-9BA3-6A437436A20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B5D99B6-E290-48DA-9BA3-6A437436A20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B5D99B6-E290-48DA-9BA3-6A437436A20A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2DA750A-819B-43D9-AD85-A4EE36427B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2DA750A-819B-43D9-AD85-A4EE36427B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2DA750A-819B-43D9-AD85-A4EE36427B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2DA750A-819B-43D9-AD85-A4EE36427B61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

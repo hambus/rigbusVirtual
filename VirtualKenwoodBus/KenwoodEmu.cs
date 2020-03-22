@@ -2,6 +2,7 @@
 using System;
 using System.IO.Ports;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace VirtualKenwoodBus
@@ -122,17 +123,19 @@ namespace VirtualKenwoodBus
       serialPort.Handshake = ToHandShake(port.Handshake);
 
       serialPort.Open();
-
-      serialPort.WriteLine("123456789012345678901234567890\n");
       continueReadingSerialPort = true;
       readThread.Start();
     }
 
     public void Command(string cmd)
     {
-      string subcmd = cmd.Substring(0, 2);
+      cmd = cmd.ToUpper();
+      cmd = Regex.Replace(cmd, @"\t|\n|\r", "");
+      string subcmd = cmd.Substring(0, 2).ToUpper();
+
+
       Console.WriteLine($"rcmd: {subcmd}");
-      switch (subcmd.ToUpper())
+      switch (subcmd)
       {
         case "ID":
           IDCommand(cmd);
@@ -303,6 +306,7 @@ namespace VirtualKenwoodBus
       {
         var freqInt = Convert.ToInt64(freqStr);
         state.Freq = freqInt;
+        state.FreqA = freqInt;
         //udpServer.SendBroadcast(state, 7300);
       }
       catch (Exception) { }
