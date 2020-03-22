@@ -15,7 +15,7 @@ namespace VirtualRigBus
       portConf.BaudRate = 8;
       portConf.StopBits = "one";
       portConf.Parity = "none";
-      portConf.PortName = "com11";
+      portConf.PortName = "com10";
       portConf.DisplayName = "ACLogger";
       portConf.Handshake = "none";
       var kenwood = new KenwoodEmu();
